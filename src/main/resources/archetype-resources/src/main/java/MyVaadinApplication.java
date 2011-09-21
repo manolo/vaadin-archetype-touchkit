@@ -21,10 +21,10 @@ public class MyVaadinApplication extends TouchKitApplication
         Button button = new Button("Click Me");
         button.addListener(new Button.ClickListener() {
             public void buttonClick(ClickEvent event) {
-                window.addComponent(new Label("Thank you for clicking"));
+                event.getButton().getWindow().addComponent(new Label("Thank you for clicking"));
             }
         });
-        getMainWindow.addComponent(button);
+        getMainWindow().addComponent(button);
     }
 
     
