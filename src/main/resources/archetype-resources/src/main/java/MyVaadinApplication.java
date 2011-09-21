@@ -1,0 +1,31 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+package ${package};
+
+import com.vaadin.addon.touchkit.ui.TouchKitApplication;
+import com.vaadin.ui.Button;
+import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.Label;
+import com.vaadin.ui.Window;
+
+/**
+ * The Application's "main" class
+ */
+@SuppressWarnings("serial")
+public class MyVaadinApplication extends TouchKitApplication
+{
+    
+    @Override
+    public void onBrowserDetailsReady() {
+        Button button = new Button("Click Me");
+        button.addListener(new Button.ClickListener() {
+            public void buttonClick(ClickEvent event) {
+                window.addComponent(new Label("Thank you for clicking"));
+            }
+        });
+        getMainWindow.addComponent(button);
+    }
+
+    
+}
