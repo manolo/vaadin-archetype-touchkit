@@ -3,28 +3,30 @@
 #set( $symbol_escape = '\' )
 package ${package};
 
-import com.vaadin.addon.touchkit.ui.TouchKitApplication;
+import com.vaadin.addon.touchkit.ui.TouchKitUI;
+import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.Label;
-import com.vaadin.ui.Window;
+import com.vaadin.ui.CssLayout;
 
 /**
- * The Application's "main" class
+ * The UI's "main" class
  */
 @SuppressWarnings("serial")
-public class MyVaadinApplication extends TouchKitApplication
+public class MyVaadinUI extends TouchKitUI
 {
-    
-    @Override
-    public void onBrowserDetailsReady() {
+	@Override
+    protected void init(VaadinRequest request) {
+		setContent(new CssLayout());
         Button button = new Button("Click Me");
-        button.addListener(new Button.ClickListener() {
+        button.addClickListener(new ClickListener() {
             public void buttonClick(ClickEvent event) {
                 event.getButton().getWindow().addComponent(new Label("Thank you for clicking"));
             }
         });
-        getMainWindow().addComponent(button);
+        addComponent(button);
     }
 
     
