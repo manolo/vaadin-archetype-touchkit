@@ -23,7 +23,7 @@ public class MyVaadinUI extends TouchKitUI
         Button button = new Button("Click Me");
         button.addClickListener(new ClickListener() {
             public void buttonClick(ClickEvent event) {
-                event.getButton().getWindow().addComponent(new Label("Thank you for clicking"));
+            	event.getButton().getUI().addComponent(new Label("Thank you for clicking"));
             }
         });
         addComponent(button);
