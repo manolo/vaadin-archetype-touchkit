@@ -2,7 +2,7 @@
 <archetype>
     <id>vaadin-archetype-touchkit</id>
     <sources>
-        <source>src/main/java/**/MyVaadinApplication.java</source>
+        <source>src/main/java/**/MyVaadinUI.java</source>
     </sources>
     <resources>
         <resource>src/main/webapp/META-INF/context.xml</resource>
