@@ -16,7 +16,7 @@ import com.vaadin.ui.UI;
 /**
  * The UI's "main" class
  */
-@Widgetset("com.vaadin.demo.diipaaipa.gwt.AppWidgetSet")
+@Widgetset("${package}.gwt.AppWidgetSet")
 public class MyTouchKitUI extends UI {
     @Override
     protected void init(VaadinRequest request) {
