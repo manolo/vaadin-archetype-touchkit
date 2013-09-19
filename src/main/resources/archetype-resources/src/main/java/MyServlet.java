@@ -11,6 +11,7 @@ import com.vaadin.server.ServiceException;
 import com.vaadin.server.SessionInitEvent;
 import com.vaadin.server.SessionInitListener;
 
+@SuppressWarnings("serial")
 @WebServlet("/*")
 public class MyServlet extends TouchKitServlet {
     
