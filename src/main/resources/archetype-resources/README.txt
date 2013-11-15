@@ -13,7 +13,7 @@ method to serve different UI for desktop browsers.
 Packaging/installing the project
 --------------------------------
 
-Run maven comman:
+Run maven command:
 
 mvn install
 
