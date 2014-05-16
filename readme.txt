@@ -21,14 +21,13 @@ USING THE ARCHETYPE:
 
 3) Generate the demo project from the archetype as follows:
 
-    mvn archetype:create
-        -DarchetypeGroupId=com.vaadin
-        -DarchetypeArtifactId=vaadin-archetype-touchkit
-        -DarchetypeVersion=1.0.0
-        -DgroupId=your.company
-        -DartifactId=project-name
-        -Dversion=1.0
-        -Dpackaging=war
+    mvn archetype:create \
+        -DarchetypeGroupId=com.vaadin \
+        -DarchetypeArtifactId=vaadin-archetype-touchkit \
+        -DarchetypeVersion=4.0.0.alpha3 \
+        -DgroupId=your.company \
+        -DartifactId=project \
+        -DprojectName=MyApp \
 
 4) Build the project.
 

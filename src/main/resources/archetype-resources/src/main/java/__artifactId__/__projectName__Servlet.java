@@ -1,7 +1,7 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-package ${package};
+package ${package}.${artifactId};
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,9 +13,9 @@ import com.vaadin.server.SessionInitListener;
 
 @SuppressWarnings("serial")
 @WebServlet("/*")
-public class MyServlet extends TouchKitServlet {
+public class ${projectName}Servlet extends TouchKitServlet {
     
-    private MyUIProvider uiProvider = new MyUIProvider();
+    private ${projectName}UIProvider uiProvider = new ${projectName}UIProvider();
     
     @Override
     protected void servletInitialized() throws ServletException {

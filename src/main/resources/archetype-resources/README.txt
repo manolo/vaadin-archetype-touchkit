@@ -1,5 +1,5 @@
 -------------------------------------------------------------------
-Vaadin TouchKit app skeleton created by maven archetype
+${projectName} Vaadin TouchKit app skeleton created by maven archetype
 -------------------------------------------------------------------
 
 USING THE GENERATED PROJECT:
@@ -26,5 +26,5 @@ Running the app in development server
 The project has by default jetty plugin configure as a web server. It
 can be started with maven command:
 
-mvn jetty:run
+mvn vaadin:compile jetty:run
 

@@ -1,10 +1,13 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-package ${package};
+package ${package}.${artifactId};
 
+import ${package}.${artifactId}.ui.*;
+import ${package}.${artifactId}.gwt.client.*;
 
-import com.vaadin.addon.touchkit.extensions.TouchKitIcon;
+import com.vaadin.addon.touchkit.extensions.OfflineMode;
+//import com.vaadin.addon.touchkit.extensions.TouchKitIcon;
 import com.vaadin.addon.touchkit.ui.NavigationManager;
 import com.vaadin.addon.touchkit.ui.TabBarView;
 import com.vaadin.annotations.Theme;
@@ -18,9 +21,17 @@ import com.vaadin.ui.UI;
  * The UI's "main" class
  */
 @SuppressWarnings("serial")
-@Widgetset("${package}.gwt.AppWidgetSet")
+@Widgetset("${package}.${artifactId}.gwt.${projectName}WidgetSet")
 @Theme("touchkit")
-public class MyTouchKitUI extends UI {
+public class ${projectName}TouchKitUI extends UI {
+    
+    private final ${projectName}PersistToServerRpc serverRpc = new ${projectName}PersistToServerRpc() {
+        @Override
+        public void persistToServer() {
+            // TODO this method is called from client side to store offline data
+        }
+    };
+    
     @Override
     protected void init(VaadinRequest request) {
         final TabBarView tabBarView = new TabBarView();
@@ -29,11 +40,17 @@ public class MyTouchKitUI extends UI {
         navigationManager.setCurrentComponent(new MenuView());
         Tab tab; 
         tab = tabBarView.addTab(navigationManager);
-        TouchKitIcon.book.addTo(tab);
+//        TouchKitIcon.book.addTo(tab);
         tab = tabBarView.addTab(new Label("Tab 2"), "Tab 2");
-        TouchKitIcon.ambulance.addTo(tab);
+//        TouchKitIcon.ambulance.addTo(tab);
         tab = tabBarView.addTab(new Label("Tab 3"), "Tab 3");
-        TouchKitIcon.download.addTo(tab);
+//        TouchKitIcon.download.addTo(tab);
         setContent(tabBarView);
+
+        OfflineMode offlineMode = new OfflineMode();
+        offlineMode.extend(this);
+        offlineMode.setPersistentSessionCookie(true);
+        offlineMode.setOfflineModeEnabled(true);
+        offlineMode.setOfflineModeTimeout(15);        
     }
 }

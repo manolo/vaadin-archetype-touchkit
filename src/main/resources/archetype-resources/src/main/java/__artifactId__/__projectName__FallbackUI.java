@@ -1,7 +1,7 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-package ${package};
+package ${package}.${artifactId};
 
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.Button;
@@ -14,7 +14,7 @@ import com.vaadin.ui.UI;
  *
  */
 @SuppressWarnings("serial")
-public class MyFallbackUI extends UI {
+public class ${projectName}FallbackUI extends UI {
 
     @Override
     protected void init(VaadinRequest request) {
