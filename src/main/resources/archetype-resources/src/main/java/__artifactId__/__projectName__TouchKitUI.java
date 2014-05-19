@@ -7,11 +7,11 @@ import ${package}.${artifactId}.ui.*;
 import ${package}.${artifactId}.gwt.client.*;
 
 import com.vaadin.addon.touchkit.extensions.OfflineMode;
-//import com.vaadin.addon.touchkit.extensions.TouchKitIcon;
 import com.vaadin.addon.touchkit.ui.NavigationManager;
 import com.vaadin.addon.touchkit.ui.TabBarView;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.Widgetset;
+import com.vaadin.server.FontAwesome;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.TabSheet.Tab;
@@ -25,13 +25,6 @@ import com.vaadin.ui.UI;
 @Theme("touchkit")
 public class ${projectName}TouchKitUI extends UI {
     
-    private final ${projectName}PersistToServerRpc serverRpc = new ${projectName}PersistToServerRpc() {
-        @Override
-        public void persistToServer() {
-            // TODO this method is called from client side to store offline data
-        }
-    };
-    
     @Override
     protected void init(VaadinRequest request) {
         final TabBarView tabBarView = new TabBarView();
@@ -40,11 +33,11 @@ public class ${projectName}TouchKitUI extends UI {
         navigationManager.setCurrentComponent(new MenuView());
         Tab tab; 
         tab = tabBarView.addTab(navigationManager);
-//        TouchKitIcon.book.addTo(tab);
+        tab.setIcon(FontAwesome.BOOK);
         tab = tabBarView.addTab(new Label("Tab 2"), "Tab 2");
-//        TouchKitIcon.ambulance.addTo(tab);
+        tab.setIcon(FontAwesome.AMBULANCE);
         tab = tabBarView.addTab(new Label("Tab 3"), "Tab 3");
-//        TouchKitIcon.download.addTo(tab);
+        tab.setIcon(FontAwesome.DOWNLOAD);
         setContent(tabBarView);
 
         OfflineMode offlineMode = new OfflineMode();
